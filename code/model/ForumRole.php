@@ -266,8 +266,8 @@ class ForumRole extends DataObjectDecorator {
 	 *
 	 * @return array
 	 */
-	function extraDBFields() {
-		$fields = array(
+	function extraStatics() {
+		return array(
 			'db' => array(
 				'FirstName' => 'Varchar(50)',
 				'Surname' => 'Varchar(50)',
@@ -290,8 +290,6 @@ class ForumRole extends DataObjectDecorator {
 				'ModeratedForums' => 'ForumPage'
 			)
 		);
-		
-		return $fields;
 	}
 	
 	/**
