@@ -22,8 +22,9 @@ class ForumHolder extends Page {
 		"DisplaySignatures" => "Boolean",
 		"ShowInCategories" => "Boolean",
 		"AllowGravatars" => "Boolean",
+		"GravatarType" => "Varchar(10)",
 		"ForbiddenWords" => "Text",
-		"CanPostType" => "Enum('Anyone, LoggedInUsers, OnlyTheseUsers, NoOne', 'LoggedInUsers')",
+		"CanPostType" => "Enum('Anyone, LoggedInUsers, OnlyTheseUsers, NoOne', 'LoggedInUsers')",		
 	);
 	
 	static $has_one = array();
@@ -79,6 +80,12 @@ class ForumHolder extends Page {
 			new CheckboxField("DisplaySignatures", "Display Member Signatures?"),
 			new CheckboxField("ShowInCategories", "Show Forums In Categories?"),
 			new CheckboxField("AllowGravatars", "Allow <a href='http://www.gravatar.com/' target='_blank'>Gravatars</a>?")
+		));
+		$fields->addFieldToTab("Root.Content.Settings",	new OptionsetField("GravatarType", "Gravatar Type", array(
+		  	"standard" => _t('Forum.STANDARD','Standard'),
+		  	"identicon" => _t('Forum.IDENTICON','Identicon'),
+		  	"wavatar" => _t('Forum.WAVATAR', 'Wavatar'),
+			"monsterid" => _t('Forum.MONSTERID', 'Monsterid'))
 		));
 		$fields->addFieldsToTab("Root.Content.LanguageFilter", array(
 			new TextField("ForbiddenWords", "Forbidden words (comma separated)"),
