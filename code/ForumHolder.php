@@ -85,7 +85,10 @@ class ForumHolder extends Page {
 		  	"standard" => _t('Forum.STANDARD','Standard'),
 		  	"identicon" => _t('Forum.IDENTICON','Identicon'),
 		  	"wavatar" => _t('Forum.WAVATAR', 'Wavatar'),
-			"monsterid" => _t('Forum.MONSTERID', 'Monsterid'))
+			"monsterid" => _t('Forum.MONSTERID', 'Monsterid'),
+			"retro" => _t('Forum.RETRO', 'Retro'),
+			"mm" => _t('Forum.MM', 'Mystery Man'),
+			"default" => _t('Forum.DEFAULT', 'Default'))
 		));
 		$fields->addFieldsToTab("Root.Content.LanguageFilter", array(
 			new TextField("ForbiddenWords", "Forbidden words (comma separated)"),
